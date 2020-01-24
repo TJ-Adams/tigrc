@@ -329,124 +329,89 @@ bind generic	v	show-version		# Show Tig version
 # Note the four leading spaces in the string to match. This is because
 # Git automatically indents commit messages by four spaces.
 
-color "---"			blue	default
-color "diff --"			yellow	default
-color "--- "			yellow	default
-color "+++ "			yellow	default
-color "@@"			magenta	default
-color "+"			green	default
-color " +"			green	default
-color "-"			red	default
-color " -"			red	default
-color "index "			blue	default
-color "old file mode "		yellow	default
-color "new file mode "		yellow	default
-color "deleted file mode "	yellow	default
-color "copy from "		yellow	default
-color "copy to "		yellow	default
-color "rename from "		yellow	default
-color "rename to "		yellow	default
-color "similarity "		yellow	default
-color "dissimilarity "		yellow	default
-color "diff-tree "		blue	default
-color "Author: "		cyan	default
-color "Commit: "		magenta	default
-color "Tagger: "		magenta	default
-color "Merge: "			blue	default
-color "Date: "			yellow	default
-color "AuthorDate: "		yellow	default
-color "CommitDate: "		yellow	default
-color "TaggerDate: "		yellow	default
-color "Refs: "			red	default
-color "Reflog: "		red	default
-color "Reflog message: "	yellow	default
-color "stash@{"			magenta	default
-color "commit "			green	default
-color "parent "			blue	default
-color "tree "			blue	default
-color "author "			green	default
-color "committer "		magenta	default
-color "    Signed-off-by"	yellow	default
-color "    Acked-by"		yellow	default
-color "    Tested-by"		yellow	default
-color "    Reviewed-by"		yellow	default
-color default			default	default	normal
-color cursor			white	green	bold
-color status			green	default
-color delimiter			magenta	default
-color date			blue	default
-color mode			cyan	default
-color id			magenta	default
-color overflow			red	default
-color header			yellow	default
-color section			cyan	default
-color directory			yellow	default
-color file			default	default
-color grep.file			blue	default
-color file-size			default	default
-color line-number		cyan	default
-color title-blur		white	blue
-color title-focus		white	blue	bold
-color main-commit		default	default
-color main-annotated		default	default	bold
-color main-tag			magenta	default	bold
-color main-local-tag		magenta	default
-color main-remote		yellow	default
-color main-replace		cyan	default
-color main-tracked		yellow	default	bold
-color main-ref			cyan	default
-color main-head			cyan	default	bold
-color stat-none			default	default
-color stat-staged		magenta	default
-color stat-unstaged		magenta	default
-color stat-untracked		magenta	default
-color help-group		blue	default
-color help-action		yellow	default
-color diff-stat			blue	default
-color diff-add-highlight	green	default	standout
-color diff-del-highlight	red	default	standout
-color palette-0			magenta	default
-color palette-1			yellow	default
-color palette-2			cyan	default
-color palette-3			green	default
-color palette-4			default	default
-color palette-5			white	default
-color palette-6			red	default
-color palette-7			magenta	default	bold
-color palette-8			yellow	default	bold
-color palette-9			cyan	default	bold
-color palette-10		green	default	bold
-color palette-11		default	default	bold
-color palette-12		white	default	bold
-color palette-13		red	default	bold
-color graph-commit		blue	default
-color search-result		black	yellow
+# general
+color   default                 15      235
+color   cursor                  15      241
+color   title-focus             242     221
+color   title-blur              242     221
+color   delimiter               213     default
+color   author                  156     default
+color   date                    81      default
+color   line-number             221     default
+color   mode                    255     default
 
-# Mappings for colors read from git configuration.
-# Set to "no" to disable.
-set git-colors = \
-	branch.current=main-head \
-	branch.local=main-ref \
-	branch.plain=main-ref \
-	branch.remote=main-remote \
-	\
-	diff.meta=diff-header \
-	diff.meta=diff-index \
-	diff.meta=diff-oldmode \
-	diff.meta=diff-newmode \
-	diff.frag=diff-chunk \
-	diff.old=diff-del \
-	diff.new=diff-add \
-	\
-	diff-highlight.oldHighlight=diff-del-highlight \
-	diff-highlight.newHighlight=diff-add-highlight \
-	\
-	grep.filename=grep.file \
-	grep.linenumber=grep.line-number \
-	grep.separator=grep.delimiter \
-	\
-	status.branch=status.header \
-	status.added=stat-staged \
-	status.updated=stat-staged \
-	status.changed=stat-unstaged \
-	status.untracked=stat-untracked
+# main
+color   main-tag                213     default     bold
+color   main-local-tag          213     default
+color   main-remote             221     default
+color   main-replace            81      default
+color   main-tracked            221     default     bold
+color   main-ref                81      default
+color   main-head               213     default     bold
+color   graph-commit            226     default
+
+# status
+#color  stat-head       81      default
+
+# Diff   colors
+color   diff_add                10      default
+color   diff_add2               10      default
+color   diff_del                196     default
+color   diff_del2               196     default
+color   diff-header             221     default
+color   diff-index              81      default
+color   diff-chunk              213     default
+color   diff_oldmode            221     default
+color   diff_newmode            221     default
+color   'deleted file mode'     221     default
+color   'copy from'             223     default
+color   'copy to'               221     default
+color   'rename from'           221     default
+color   'rename to'             221     default
+color   diff_similarity         221     default
+color   'dissimilarity'         221     default
+color   'diff_tree'             81      default
+color   diff-stat               81      default
+color   "Reported-by:"          156     default
+
+color   'Author:'               156     default
+color   'Commit:'               213     default
+color   'AuthorDate:'           221     default
+color   'CommitDate:'           221     default
+color   'Date:'                 81      default
+color   pp_refs                 213     default
+color   palette-0               226     default
+color   palette-1               213     default
+color   palette-2               118     default
+color   palette-3               51      default
+color   palette-4               196     default
+color   palette-5               219     default
+color   palette-6               190     default
+
+# status
+color   status.header           221     default
+color   status.section          81      default
+color   stat_staged             213     default
+color   stat_unstaged           213     default
+color   stat_untracked          213     default
+
+# raw commit header
+color   commit                  156     default
+color   committer               213     default
+
+# commit message
+color   'Signed-off-by'         221     default
+color   'Acked-by'              221     default
+color   'Tested-by'             221     default
+color   'Reviewed-by'           221     default
+
+# tree
+color   tree.directory         221     default
+
+# LINE(PALETTE_0, "", COLOR_MAGENTA, COLOR_DEFAULT, 0), \
+#   LINE(PALETTE_1, "", COLOR_YELLOW, COLOR_DEFAULT, 0), \
+#   LINE(PALETTE_2, "", COLOR_CYAN, COLOR_DEFAULT, 0), \
+#   LINE(PALETTE_3, "", COLOR_GREEN, COLOR_DEFAULT, 0), \
+#   LINE(PALETTE_4, "", COLOR_DEFAULT, COLOR_DEFAULT, 0), \
+#   LINE(PALETTE_5, "", COLOR_WHITE, COLOR_DEFAULT, 0), \
+#   LINE(PALETTE_6, "", COLOR_RED, )
