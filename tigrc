@@ -307,6 +307,7 @@ bind generic	<C-L>	screen-redraw		# Redraw the screen
 bind generic	z	stop-loading		# Stop all loading views
 bind generic	v	show-version		# Show Tig version
 
+bind main	H	:goto %(head)		# Go to HEAD
 bind generic	x	!@sh -c "echo -n %(commit) | xclip -selection c"	# Copy Hash to Clipboard
 
 # Colors
